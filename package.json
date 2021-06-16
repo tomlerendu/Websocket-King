@@ -1,0 +1,104 @@
+{
+  "name": "websocket-king",
+  "version": "4.0",
+  "private": true,
+  "dependencies": {
+    "@sentry/browser": "^5.14.2",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "date-fns": "^2.8.1",
+    "env-cmd": "^10.0.1",
+    "formik": "^2.2.3",
+    "lodash": "^4.17.20",
+    "prismjs": "^1.22.0",
+    "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^17.0.1",
+    "react-ga": "^3.2.0",
+    "react-icons": "^3.11.0",
+    "react-portal": "^4.2.1",
+    "react-redux": "^7.1.3",
+    "react-scripts": "4.0.0",
+    "react-simple-code-editor": "^0.11.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "^2.0.1",
+    "twin.macro": "^2.0.5",
+    "typescript": "~4.0.5",
+    "use-resize-observer": "^7.0.0",
+    "uuid": "^8.3.1",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.1.2",
+    "@storybook/addon-controls": "^6.1.2",
+    "@storybook/addon-essentials": "^6.1.2",
+    "@storybook/addon-links": "^6.1.2",
+    "@storybook/node-logger": "^6.1.2",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.2",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.164",
+    "@types/node": "^14.14.5",
+    "@types/prismjs": "^1.16.2",
+    "@types/react": "^16.9.0",
+    "@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-portal": "^4.0.2",
+    "@types/react-redux": "^7.1.5",
+    "@types/styled-components": "^5.1.4",
+    "@types/uuid": "^8.3.0",
+    "@types/yup": "^0.29.9",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
+    "electron": "^10.1.3",
+    "enzyme": "^3.11.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "react-is": "^17.0.1"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/env-cmd -f ./.env.dev react-scripts start",
+    "build:web": "node_modules/.bin/env-cmd -f ./.env.prod.web react-scripts build",
+    "build:chrome": "export INLINE_RUNTIME_CHUNK=false && node_modules/.bin/env-cmd -f ./.env.prod.chrome react-scripts build && node ./scripts/chrome.js",
+    "build:electron": "export INLINE_RUNTIME_CHUNK=false && node_modules/.bin/env-cmd -f ./.env.prod.electron react-scripts build && node ./scripts/electron.js",
+    "copy-env": "node ./scripts/copy-env",
+    "sentry:source-maps": "node ./scripts/sentry",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:storybook": "start-storybook -p 6006 -s public",
+    "build:storybook": "build-storybook -s public"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "styled-components",
+      "autoCssProp": true,
+      "dataTwProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}
