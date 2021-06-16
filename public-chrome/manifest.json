@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "WebSocket King Client",
+  "short_name": "WebSocket King",
+  "version": "4.0",
+  "permissions": [
+    "unlimitedStorage"
+  ],
+  "minimum_chrome_version": "50",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/logo19.png",
+      "38": "images/logo38.png"
+    },
+    "default_title": "WebSocket King"
+  },
+  "commands" : {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+S",
+        "mac": "Alt+S",
+        "chromeos": "Alt+S",
+        "linux": "Alt+S"
+      }
+    }
+  },
+  "description": "A WebSocket client for testing and debugging connections.",
+  "icons": {
+    "16": "images/logo16.png",
+    "32": "images/logo32.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  }
+}
